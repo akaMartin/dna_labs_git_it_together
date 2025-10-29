@@ -4,10 +4,11 @@ A basic command-line todo list manager for learning git commands.
 """
 
 class Todo:
-    def __init__(self, title, description=""):
+    def __init__(self, title, description="",time=0):
         self.title = title
         self.description = description
         self.completed = False
+        self.time = time
     
     def mark_complete(self):
         self.completed = True
@@ -21,8 +22,8 @@ class TodoList:
     def __init__(self):
         self.todos = []
     
-    def add_todo(self, title, description=""):
-        todo = Todo(title, description)
+    def add_todo(self, title, description="",time=0):
+        todo = Todo(title, description,time)
         self.todos.append(todo)
         return todo
     
@@ -39,6 +40,10 @@ class TodoList:
             self.todos[index].mark_complete()
             return True
         return False
+
+    def compute_todo_time(self):
+        return sum([0 if x.completed else int(x.time) for x in self.todos])
+        
 
 
 if __name__ == "__main__":
