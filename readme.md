@@ -14,11 +14,14 @@ A simple Todo application designed to help you practice common git commands.
 
 ## Setup
 
-1. Make sure you have Python 3 installed
+1. Make sure you have uv installed
+   ```bash
+   brew install uv
+   ```
 2. Clone or navigate to this repository
 3. Run the application:
    ```bash
-   python main.py
+   uv run main.py
    ```
 
 ## Features
