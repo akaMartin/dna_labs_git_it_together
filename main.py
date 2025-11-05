@@ -13,7 +13,8 @@ def main():
         print("1. Add todo")
         print("2. List todos")
         print("3. Complete todo")
-        print("4. Exit")
+        print("4. Delete todo")
+        print("5. Exit")
         
         choice = input("\nEnter choice: ").strip()
         
@@ -38,6 +39,17 @@ def main():
                 print("Please enter a valid number!")
         
         elif choice == "4":
+            todo_list.list_todos()
+            try:
+                index = int(input("Enter todo number to delete: ").strip()) - 1
+                if todo_list.delete_todo(inde):
+                    print("Todo deleted!")
+                else:
+                    print("Invalid todo number!")
+            except ValueError:
+                print("Please enter a valid number!")
+        
+        elif choice == "5":
             print("Goodbye!")
             break
         
