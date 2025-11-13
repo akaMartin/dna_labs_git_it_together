@@ -42,7 +42,7 @@ def main():
             todo_list.list_todos()
             try:
                 index = int(input("Enter todo number to delete: ").strip()) - 1
-                if todo_list.delete_todo(inde):
+                if todo_list.delete_todo(index):
                     print("Todo deleted!")
                 else:
                     print("Invalid todo number!")
