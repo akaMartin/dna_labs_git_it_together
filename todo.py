@@ -40,6 +40,12 @@ class TodoList:
             return True
         return False
 
+    def delete_todo(self, index):
+        if 0 <= index < len(self.todos):
+            self.todos.pop(index)
+            return True
+        return False
+
 
 if __name__ == "__main__":
     todo_list = TodoList()
